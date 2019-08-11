@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:snack_grid_menu/grid_view.dart';
-import 'package:snack_grid_menu/menu_item.dart';
+import 'package:snack_grid_menu/snack_grid_menu.dart';
 
 void main() {
 runApp(ContohSnackGrid());

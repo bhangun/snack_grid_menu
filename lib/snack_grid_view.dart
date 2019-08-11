@@ -29,13 +29,13 @@ class SnackGridMenu extends StatelessWidget{
   Widget build(BuildContext context) {
     List<MenuItem> _newList = List<MenuItem>();
     List<MenuItem> _remainsList = List<MenuItem>();
-    int _newLength = maxItemView;
-    _reListGrid(_newList,_newLength, _remainsList,context);
+    // int _newLength = maxItemView;
+    _reListGrid(_newList, _remainsList,context);
     return GridView.count(
               shrinkWrap: shrinkWrap,
               physics: NeverScrollableScrollPhysics(),
               crossAxisCount: crossAxisCount,
-              children: List<_GridItem>.generate(_newLength, (int index) {
+              children: List<_GridItem>.generate(maxItemView, (int index) {
                 var i = _newList[index];
                 return _GridItem(item:i, snackMenu: _snackMenu(_remainsList),moreLabel: moreLabel);
               })
@@ -44,15 +44,15 @@ class SnackGridMenu extends StatelessWidget{
 
   _reListGrid(
       List<MenuItem> newList, 
-      int newLength, 
+      //int newLength, 
       List<MenuItem> remainsList,
       BuildContext context){
 
     if(maxItemView !=null){
-      newLength = maxItemView;
+     // newLength = maxItemView;
 
       for(int i=0;i < itemList.length;i++){
-        if(i < newLength-1)
+        if(i < maxItemView-1)
           newList.add(itemList[i]);
         else
           remainsList.add(itemList[i]);
@@ -88,7 +88,6 @@ class _GridItem extends StatelessWidget {
   final Widget snackMenu;
   final String moreLabel;
 
-
   _GridItem({Key key, 
     this.height=30, 
     this.width=30,
@@ -100,14 +99,39 @@ class _GridItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
+    return item.title == moreLabel ? _moreBtn(context):_itemBtn(context);
+  }
+
+  _itemBtn(BuildContext context){
     return Padding(
       padding: const EdgeInsets.all(1 / 2),
       child: GestureDetector(
       child:_item(),
-      onTap: //item.title == moreLabel ?
-      _showBottomSheet(context)//:item.onTap // _navigateTo(context)
+      onTap: item.onTap
       )
     );
+  }
+
+  _moreBtn(BuildContext context){
+    return Padding(
+      padding: const EdgeInsets.all(1 / 2),
+      child: GestureDetector(
+      child:_item(),
+      onTap: ()=> 
+     _showBottomSheet(context)/// _navigateTo(context)
+      )
+    );
+  }
+
+   _onTap(BuildContext context){
+   if(item.title == moreLabel) {
+     _showBottomSheet(context);
+      print('showSnack.toString()');
+   }else 
+   return  item.onTap;
+    //return //showSnack?
+      //:item.onTap;
   }
 
   _item(){

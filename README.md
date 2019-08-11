@@ -1,6 +1,6 @@
 # snack_grid_menu
 
-A new Flutter package project.
+Showing grid menu on Snackbar.
 
 ## Getting Started
 
