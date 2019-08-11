@@ -1,8 +1,8 @@
 name: snack_grid_menu
 description: A new Flutter package project.
 version: 0.0.1
-author:
-homepage:
+author: Bhangun Hartani <bhangunh@gmail.com>
+homepage: https://www.linkedin.com/in/bhangun-hartani-b3859821/
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
