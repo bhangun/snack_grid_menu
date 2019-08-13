@@ -2,6 +2,7 @@
 
 Showing grid menu on Snackbar.
 
+## Example
 ```
 SnackGridMenu(
     maxItemView: 6,
