@@ -6,5 +6,6 @@ class MenuItem {
   Color color;
   VoidCallback onTap;
 
-  MenuItem({ @required this.title, @required this.imagePath, this.color, this.onTap });
+  MenuItem(
+      {@required this.title, @required this.imagePath, this.color, this.onTap});
 }

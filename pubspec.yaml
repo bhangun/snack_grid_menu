@@ -1,6 +1,6 @@
 name: snack_grid_menu
-description: A new Flutter package project.
-version: 0.0.1
+description: Grid Menu with dynamic column and row, and showing more grid menu on Snackbar.
+version: 0.0.2
 author: Bhangun Hartani <bhangunh@gmail.com>
 homepage: https://github.com/bhangun/snack_grid_menu
 

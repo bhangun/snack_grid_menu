@@ -1,3 +1,7 @@
-## [0.0.1] - TODO: Add release date.
+## [0.0.1] - initiate.
 
-* TODO: Describe initial release.
+* initiate
+
+## [0.0.2] - add License & example.
+
+* add License & example
